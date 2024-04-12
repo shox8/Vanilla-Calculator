@@ -3,6 +3,8 @@ let input = document.getElementById("input");
 let clearBtn = document.getElementById("clearBtn");
 let backspaceBtn = document.getElementById("backspaceBtn");
 let equalBtn = document.getElementById("equalBtn");
+let colors = document.querySelectorAll(".color")
+let methods = document.querySelectorAll(".method")
 
 input.focus();
 
@@ -10,6 +12,25 @@ function isNumber(value) {
     const num = parseFloat(value);
     return !isNaN(num) && isFinite(num);
 }
+
+function query(key, property) {
+    let params = new URLSearchParams({ [key]: property });
+    params.toString();
+    window.location.href = window.origin + "?" + params;
+}
+
+function customize(color) {
+    equalBtn.style.background = color;
+    methods.forEach((item) => {
+        item.style.color = color;
+    });
+}
+
+window.addEventListener("load", () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const color = urlParams.get('color');
+    customize(color);
+});
 
 writableBtns.forEach((btn) => {
     btn.addEventListener("click", (e) => {
@@ -46,4 +67,11 @@ backspaceBtn.addEventListener("click", () => {
 equalBtn.addEventListener("click", () => {
     let value = input.value.replace("÷", "/").replace("×", "*");
     return input.value = eval(value);
+});
+
+colors.forEach((color) => {
+    color.addEventListener("click", (event) => {
+        query("color", event.target.classList[1]);
+        customize(event.target.classList[1]);
+    });
 });

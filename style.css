@@ -22,7 +22,7 @@ body .calculator {
   width: 300px;
   border-radius: 30px;
   -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   background: rgba(255, 255, 255, 0.1098039216);
 }
 body .calculator input {
@@ -69,7 +69,7 @@ body .calculator .btns .method {
   color: orange;
 }
 body .calculator .btns .big-btn {
-  grid-column: 1/span 2;
+  grid-column: 1 / span 2;
   text-align: start;
   padding-left: 22px;
 }
@@ -83,7 +83,7 @@ body .colors {
   align-items: center;
   border-radius: 30px;
   -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   background: rgba(255, 255, 255, 0.1098039216);
   padding: 10px;
   gap: 10px;
@@ -100,12 +100,12 @@ body .colors div:active {
 body .colors .orange {
   background: orange;
 }
-body .colors .red {
+body .colors .crimson {
   background: crimson;
 }
-body .colors .green {
+body .colors .lawngreen {
   background: lawngreen;
 }
-body .colors .blue {
+body .colors .royalblue {
   background: royalblue;
-}/*# sourceMappingURL=style.css.map */
+} /*# sourceMappingURL=style.css.map */
